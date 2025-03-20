@@ -10,10 +10,6 @@
 
 package cachescale
 
-import (
-	"github.com/0xsoniclabs/consensus/inter/idx"
-)
-
 // Ratio alters the cache sizes proportionally to a ratio
 type Ratio struct {
 	Base   uint64
@@ -59,16 +55,4 @@ func (r Ratio) I32(v int32) int32 {
 
 func (r Ratio) I64(v int64) int64 {
 	return int64(r.U64(uint64(v)))
-}
-
-func (r Ratio) Events(v idx.Event) idx.Event {
-	return idx.Event(r.U64(uint64(v)))
-}
-
-func (r Ratio) Blocks(v idx.Block) idx.Block {
-	return idx.Block(r.U64(uint64(v)))
-}
-
-func (r Ratio) Frames(v idx.Frame) idx.Frame {
-	return idx.Frame(r.U64(uint64(v)))
 }

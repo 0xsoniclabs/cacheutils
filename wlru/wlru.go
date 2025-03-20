@@ -3,7 +3,7 @@ package wlru
 import (
 	"sync"
 
-	"github.com/0xsoniclabs/consensus/utils/simplewlru"
+	"github.com/0xsoniclabs/cacheutils/simplewlru"
 )
 
 // Cache is a thread-safe fixed size LRU cache.

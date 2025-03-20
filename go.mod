@@ -5,7 +5,6 @@ go 1.22.0
 toolchain go1.23.6
 
 require (
-	github.com/0xsoniclabs/consensus v0.0.0-20250303105940-38ab29a1723f
 	github.com/hashicorp/golang-lru v1.0.2
 	github.com/stretchr/testify v1.10.0
 )
