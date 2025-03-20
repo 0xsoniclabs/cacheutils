@@ -2,8 +2,6 @@ package cachescale
 
 import (
 	"testing"
-
-	"github.com/0xsoniclabs/consensus/inter/idx"
 )
 
 func TestRatio_U64(t *testing.T) {
@@ -114,32 +112,5 @@ func TestRatio_I64(t *testing.T) {
 	want := int64(4) // (3*4)/3 = 4
 	if got := r.I64(v); got != want {
 		t.Errorf("I64() = %v, want %v", got, want)
-	}
-}
-
-func TestRatio_Events(t *testing.T) {
-	r := Ratio{Base: 2, Target: 3}
-	v := idx.Event(3)
-	want := idx.Event(5) // (3*3)/2 = 4.5 → 5
-	if got := r.Events(v); got != want {
-		t.Errorf("Events() = %v, want %v", got, want)
-	}
-}
-
-func TestRatio_Blocks(t *testing.T) {
-	r := Ratio{Base: 3, Target: 1}
-	v := idx.Block(9)
-	want := idx.Block(3) // (9*1)/3 = 3
-	if got := r.Blocks(v); got != want {
-		t.Errorf("Blocks() = %v, want %v", got, want)
-	}
-}
-
-func TestRatio_Frames(t *testing.T) {
-	r := Ratio{Base: 4, Target: 5}
-	v := idx.Frame(8)
-	want := idx.Frame(10) // (8*5)/4 = 10
-	if got := r.Frames(v); got != want {
-		t.Errorf("Frames() = %v, want %v", got, want)
 	}
 }
